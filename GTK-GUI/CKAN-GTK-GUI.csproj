@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{12212418-C7FE-40FD-A51A-99A4FE4314A9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <RootNamespace>CKAN</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>glib-sharp-2.0</Package>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Mono.Posix" />
+    <Reference Include="gtk-dotnet, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-dotnet-2.0</Package>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\update.png" />
+    <EmbeddedResource Include="Resources\alert.png" />
+    <EmbeddedResource Include="Resources\apply.png" />
+    <EmbeddedResource Include="Resources\arrow_forward.png" />
+    <EmbeddedResource Include="Resources\arrow_upward.png" />
+    <EmbeddedResource Include="Resources\ksp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="gtk-gui\MainWindow.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Documentation.cs" />
+    <Compile Include="gtk-gui\CKAN.InstallFromCKAN.cs" />
+    <Compile Include="SubWindows\InstallFromCKAN.cs" />
+    <Compile Include="gtk-gui\CKAN.ManageGameInstances.cs" />
+    <Compile Include="SubWindows\ManageGameInstances.cs" />
+    <Compile Include="gtk-gui\CKAN.OpenGameDirectory.cs" />
+    <Compile Include="SubWindows\OpenGameDirectory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="SubWindows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoUpdate\CKAN-autoupdate.csproj">
+      <Project>{E5B1C768-349E-4DAF-A134-56E4ECF1EEEF}</Project>
+      <Name>CKAN-autoupdate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cmdline\CKAN-cmdline.csproj">
+      <Project>{E97D81F6-85E2-4F1F-906D-BE21766602E5}</Project>
+      <Name>CKAN-cmdline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConsoleUI\CKAN-ConsoleUI.csproj">
+      <Project>{DA5C7023-9A3B-4204-AE2F-BBA6C388B436}</Project>
+      <Name>CKAN-ConsoleUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\CKAN-core.csproj">
+      <Project>{3B9AEA22-FA3B-4E43-9283-EABDD81CF271}</Project>
+      <Name>CKAN-core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GUI\CKAN-GUI.csproj">
+      <Project>{A79F9D54-315C-472B-928F-713A5860B2BE}</Project>
+      <Name>CKAN-GUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Netkan\CKAN-netkan.csproj">
+      <Project>{4336F356-33DB-442A-BF74-5E89AF47A5B9}</Project>
+      <Name>CKAN-netkan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tests\Tests.csproj">
+      <Project>{4F41255E-8BC1-465B-82D5-1C5665BC099A}</Project>
+      <Name>Tests</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

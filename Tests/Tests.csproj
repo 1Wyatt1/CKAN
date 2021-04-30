@@ -1,8 +1,8 @@
-﻿<Project>
+﻿<Project ToolsVersion="15.0">
   <PropertyGroup>
     <AssemblyName>CKAN.Tests</AssemblyName>
     <OutputPath>..\_build\out\$(AssemblyName)\$(Configuration)\bin\</OutputPath>
-    <BaseIntermediateOutputPath>..\_build\out\$(AssemblyName)\$(Configuration)\obj\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\_build\out\CKAN.Tests\obj</BaseIntermediateOutputPath>
   </PropertyGroup>
   <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
   <PropertyGroup>

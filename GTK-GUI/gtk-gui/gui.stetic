@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="../bin/Release/CKAN-GTK-GUI.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="620 362">
+    <action-group name="Default">
+      <action id="FileAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">File</property>
+        <property name="ShortLabel" translatable="yes">File</property>
+      </action>
+      <action id="SettingsAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Settings</property>
+        <property name="ShortLabel" translatable="yes">Settings</property>
+      </action>
+      <action id="HelpAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Help</property>
+        <property name="ShortLabel" translatable="yes">Help</property>
+      </action>
+      <action id="ManageGameInstancesAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Manage Game Instances</property>
+        <property name="ShortLabel" translatable="yes">Manage Game Instances</property>
+        <signal name="Activated" handler="OnManageGameInstancesActionActivated" />
+      </action>
+      <action id="OpenGameDirectoryAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Open Game Directory</property>
+        <property name="ShortLabel" translatable="yes">Open Game Directory</property>
+        <signal name="Activated" handler="OnOpenGameDirectoryActionActivated" />
+      </action>
+      <action id="InstallFromCkanAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Install From .ckan</property>
+        <property name="ShortLabel" translatable="yes">Install From .ckan</property>
+        <signal name="Activated" handler="OnInstallFromCkanActionActivated" />
+      </action>
+      <action id="ImportDonwloadedModsAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Import Donwloaded Mods</property>
+        <property name="ShortLabel" translatable="yes">Import Donwloaded Mods</property>
+      </action>
+      <action id="SaveInstalledModListAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Save Installed Mod List</property>
+        <property name="ShortLabel" translatable="yes">Save Installed Mod List</property>
+      </action>
+      <action id="ExportModpackAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Export Modpack</property>
+        <property name="ShortLabel" translatable="yes">Export Modpack</property>
+      </action>
+      <action id="AuditRecommendationsAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Audit Recommendations</property>
+        <property name="ShortLabel" translatable="yes">Audit Recommendations</property>
+      </action>
+      <action id="ExitCtrlQAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Exit                                   Ctrl+Q</property>
+        <property name="ShortLabel" translatable="yes">Exit                                   Ctrl+Q</property>
+        <signal name="Activated" handler="OnExitCtrlQActionActivated" />
+      </action>
+      <action id="newAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-new</property>
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">CKAN</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="DefaultWidth">600</property>
+    <property name="DefaultHeight">400</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Button" id="LaunchGame">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Launch Game</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnLaunchGameClicked" />
+          </widget>
+          <packing>
+            <property name="Y">25</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="Refresh">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Refresh</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnRefreshClicked" />
+          </widget>
+          <packing>
+            <property name="X">101</property>
+            <property name="Y">25</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="AddAvailableUpdates">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Add Available Updates</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnAddAvailableUpdatesClicked" />
+          </widget>
+          <packing>
+            <property name="X">165</property>
+            <property name="Y">25</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="ApplyChanges">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Apply Changes</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnApplyChangesClicked" />
+          </widget>
+          <packing>
+            <property name="X">330</property>
+            <property name="Y">25</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar1">
+            <property name="MemberName" />
+            <node name="menubar1" type="Menubar">
+              <node type="Menu" action="FileAction">
+                <node type="Menuitem" action="ManageGameInstancesAction" />
+                <node type="Menuitem" action="OpenGameDirectoryAction" />
+                <node type="Menuitem" action="InstallFromCkanAction" />
+                <node type="Menuitem" action="ImportDonwloadedModsAction" />
+                <node type="Menuitem" action="SaveInstalledModListAction" />
+                <node type="Menuitem" action="ExportModpackAction" />
+                <node type="Menuitem" action="AuditRecommendationsAction" />
+                <node type="Menuitem" action="ExitCtrlQAction" />
+              </node>
+              <node type="Menu" action="SettingsAction" />
+              <node type="Menu" action="HelpAction" />
+            </node>
+          </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="GTKGUI.ManageGameInstances" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">ManageGameInstances</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <placeholder />
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="CKAN.InstallFromCKAN" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">InstallFromCKAN</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <placeholder />
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="CKAN.ManageGameInstances" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">ManageGameInstances</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <placeholder />
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="CKAN.OpenGameDirectory" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">OpenGameDirectory</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <placeholder />
+    </child>
+  </widget>
+</stetic-interface>
